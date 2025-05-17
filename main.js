@@ -1,26 +1,19 @@
-// Handle contact form submission
-function handleFormSubmit(event) {
-    event.preventDefault();
+// Responsive Navigation (for future toggle on mobile)
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelector('.nav-links');
   
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+    // Example: Future implementation for mobile nav toggle
+    // document.querySelector('.menu-toggle').addEventListener('click', () => {
+    //   navLinks.classList.toggle('active');
+    // });
   
-    if (name && email && message) {
-      alert(`Thanks, ${name}! Your message has been received. We'll contact you shortly.`);
-      document.querySelector(".contact-form").reset();
-    } else {
-      alert("Please fill in all fields.");
-    }
-  }
+    // Sample interaction: Product click (for products.html)
+    const productCards = document.querySelectorAll('.product-card');
   
-  // Handle Add to Cart buttons
-  document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll(".add-to-cart");
-    
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        alert(`✅ ${button.getAttribute("data-product")} added to cart!`);
+    productCards.forEach((card) => {
+      card.addEventListener('click', () => {
+        const productName = card.querySelector('h4').textContent;
+        alert(`You selected ${productName}`);
       });
     });
   });
